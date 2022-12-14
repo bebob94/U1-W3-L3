@@ -36,7 +36,7 @@
 
 <body>
   <div>
-    <h1>Questo è il titolo della pagina</h1>
+    <h1 onclick="makeItClickable()">Questo è il titolo della pagina</h1>
     <h2>Questo è il sottotitolo della pagina</h2>
   </div>
 
@@ -93,7 +93,7 @@
 
     const addClassToTitle = function () {
       const h1= document.querySelector("h1")
-      h1.className = "myHeading"
+      h1.classList.add("myHeading")
 
     }
 
@@ -164,9 +164,8 @@
       */
 
     const makeItClickable = function () {
-      let removeLastLetter=document.querySelectorAll("h1")
-      let h1T= removeLastLetter.textContent;
-      h1T.onclick= () => h1T.substring(0, h1T.lenght - 1)
+      const removeLastLetter=document.querySelector("h1")
+      removeLastLetter.innerText = removeLastLetter.innerText.substring(0, removeLastLetter.innerText.length -1)
 
     }
 
@@ -186,32 +185,32 @@
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-    const generateTable = function () {
-      const tableArea= document.querySelector("#tableArea")
-      const table=document.createElement("table")
+    // const generateTable = function () {
+    //   const tableArea= document.querySelector("#tableArea")
+    //   const table=document.createElement("table")
 
-      const tr= document.createElement("tr")
-      const th1tr= document.createElement("th")
-      const th2tr= document.createElement("th")
-      const th3tr= document.createElement("th")
-      const th4tr= document.createElement("th")
-      th1tr.innerText= "immagine"
-      th2tr.innerText= "nome prodotto"
-      th3tr.innerText= "quantità"
-      th4tr.innerText= "prezzo"
+    //   const tr= document.createElement("tr")
+    //   const th1tr= document.createElement("th")
+    //   const th2tr= document.createElement("th")
+    //   const th3tr= document.createElement("th")
+    //   const th4tr= document.createElement("th")
+    //   th1tr.innerText= "immagine"
+    //   th2tr.innerText= "nome prodotto"
+    //   th3tr.innerText= "quantità"
+    //   th4tr.innerText= "prezzo"
 
-      const td= document.createElement("td")
-      const th1td= document.createElement("th")
-      const th2td= document.createElement("th")
-      const th3td= document.createElement("th")
-      const th4td= document.createElement("th")
-      const th5td= document.createElement("th")
+    //   const td= document.createElement("td")
+    //   const th1td= document.createElement("th")
+    //   const th2td= document.createElement("th")
+    //   const th3td= document.createElement("th")
+    //   const th4td= document.createElement("th")
+    //   const th5td= document.createElement("th")
 
-      td.appendChild(th1td,th2td, th3td, th4td, th5td)
-      tr.appendChild(th1tr,th2tr,th3tr,th4tr)
-      table.appendChild(tr,td)
-      tableArea.appendChild(table)
-    }
+    //   td.appendChild(th1td,th2td, th3td, th4td, th5td)
+    //   tr.appendChild(th1tr,th2tr,th3tr,th4tr)
+    //   table.appendChild(tr,td)
+    //   tableArea.appendChild(table)
+    // }
 
     /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
