@@ -81,7 +81,9 @@
     */
 
     const changeTitle = function () {
-
+      const h1= document.querySelector("h1")
+      h1.innerText = "nuovo titolo"
+      h1.style.color = "red"
 
     }
 
@@ -90,7 +92,8 @@
     */
 
     const addClassToTitle = function () {
-
+      const h1= document.querySelector("h1")
+      h1.className = "myHeading"
 
     }
 
@@ -99,7 +102,8 @@
       */
 
     const changePcontent = function () {
-
+      const p = document.querySelectorAll("div p")
+      p.forEach(elem => elem.innerText=  "questo è il testo modificato");
 
     }
 
@@ -108,8 +112,8 @@
       */
 
     const changeUrls = function () {
-
-
+      const a= document.querySelectorAll("div a")
+      a.forEach(elem=> elem.href= "https://www.google.com")
     }
 
     /* ESERCIZIO 5
@@ -117,6 +121,10 @@
     */
 
     const addToTheSecond = function () {
+      const secondList= document.querySelector("#secondList")
+      const newLi= document.createElement("li")
+      newLi.innerText= "4rd"
+      secondList.appendChild(newLi)
 
 
     }
@@ -126,8 +134,10 @@
     */
 
     const addParagraph = function () {
-
-
+      const firstDiv= document.querySelector("div:first-child")
+      const newP=document.createElement("p")
+      newP.innerText= "questo è il nuovo paragrafo"
+      firstDiv.appendChild(newP)
     }
 
     /* ESERCIZIO 7
@@ -135,8 +145,8 @@
     */
 
     const hideFirstUl = function () {
-
-
+      const removeList= document.querySelector("#firstList")
+      removeList.remove()
     }
 
     /* ESERCIZIO 8 
@@ -144,7 +154,8 @@
       */
 
     const paintItGreen = function () {
-
+      const greenUL=document.querySelectorAll("ul")
+      greenUL.forEach(elem => elem.style.backgroundColor= "green")
 
     }
 
@@ -153,7 +164,9 @@
       */
 
     const makeItClickable = function () {
-
+      let removeLastLetter=document.querySelectorAll("h1")
+      let h1T= removeLastLetter.textContent;
+      h1T.onclick= () => h1T.substring(0, h1T.lenght - 1)
 
     }
 
@@ -162,7 +175,9 @@
       */
 
     const revealFooterLink = function () {
-
+      const footer= document.querySelector("footer")
+      const a= document.querySelector("footer a")
+      footer.onclick = () => alert(a.href)
 
     }
 
@@ -172,8 +187,30 @@
     */
 
     const generateTable = function () {
+      const tableArea= document.querySelector("#tableArea")
+      const table=document.createElement("table")
 
+      const tr= document.createElement("tr")
+      const th1tr= document.createElement("th")
+      const th2tr= document.createElement("th")
+      const th3tr= document.createElement("th")
+      const th4tr= document.createElement("th")
+      th1tr.innerText= "immagine"
+      th2tr.innerText= "nome prodotto"
+      th3tr.innerText= "quantità"
+      th4tr.innerText= "prezzo"
 
+      const td= document.createElement("td")
+      const th1td= document.createElement("th")
+      const th2td= document.createElement("th")
+      const th3td= document.createElement("th")
+      const th4td= document.createElement("th")
+      const th5td= document.createElement("th")
+
+      td.appendChild(th1td,th2td, th3td, th4td, th5td)
+      tr.appendChild(th1tr,th2tr,th3tr,th4tr)
+      table.appendChild(tr,td)
+      tableArea.appendChild(table)
     }
 
     /* ESERCIZIO 12
