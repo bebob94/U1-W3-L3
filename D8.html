@@ -185,41 +185,85 @@
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-    // const generateTable = function () {
-    //   const tableArea= document.querySelector("#tableArea")
-    //   const table=document.createElement("table")
+    const generateTable = function () {
+      const tableArea= document.querySelector("#tableArea")
 
-    //   const tr= document.createElement("tr")
-    //   const th1tr= document.createElement("th")
-    //   const th2tr= document.createElement("th")
-    //   const th3tr= document.createElement("th")
-    //   const th4tr= document.createElement("th")
-    //   th1tr.innerText= "immagine"
-    //   th2tr.innerText= "nome prodotto"
-    //   th3tr.innerText= "quantità"
-    //   th4tr.innerText= "prezzo"
+      const table= document.createElement("table")
+      table.id= "firstTable"
+      const thead= document.createElement("thead")
+      const tbody= document.createElement("tbody")
+      
+      table.appendChild(thead)
+      table.appendChild(tbody)
+      tableArea.appendChild(table)
 
-    //   const td= document.createElement("td")
-    //   const th1td= document.createElement("th")
-    //   const th2td= document.createElement("th")
-    //   const th3td= document.createElement("th")
-    //   const th4td= document.createElement("th")
-    //   const th5td= document.createElement("th")
+      let titles= document.createElement("tr")
+      let th1thead= document.createElement("td")
+      th1thead.innerText= "immagine"
+      let th2thead= document.createElement("td")
+      th2thead.innerText= "nome prodotto"
+      let th3thead= document.createElement("td")
+      th3thead.innerText= "quantità"
+      let th4thead= document.createElement("td")
+      th4thead.innerText= "prezzo"
 
-    //   td.appendChild(th1td,th2td, th3td, th4td, th5td)
-    //   tr.appendChild(th1tr,th2tr,th3tr,th4tr)
-    //   table.appendChild(tr,td)
-    //   tableArea.appendChild(table)
-    // }
+
+      thead.appendChild(titles)
+      titles.appendChild(th1thead)
+      titles.appendChild(th2thead)
+      titles.appendChild(th3thead)
+      titles.appendChild(th4thead)
+
+      for (let i = 0; i < 5; i++) {
+
+      let trbody= document.createElement("tr")
+      let td1body= document.createElement("th")
+      td1body.innerText= "..."
+      let td2body= document.createElement("th")
+      td2body.innerText= "tazza"
+      let td3body= document.createElement("th")
+      td3body.innerText= "5"
+      let td4body= document.createElement("th")
+      td4body.innerText= "20€"
+      
+
+      tbody.appendChild(trbody)
+      trbody.appendChild(td1body)
+      trbody.appendChild(td2body)
+      trbody.appendChild(td3body)
+      trbody.appendChild(td4body)
+      }
+
+    }
 
     /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
     */
 
     const addRow = function () {
+    tbody= document.querySelector("#firstTable tbody")
+
+    
+
+        let trbody= document.createElement("tr")
+        let td1body= document.createElement("th")
+        td1body.innerText= "..."
+        let td2body= document.createElement("th")
+        td2body.innerText= "tazza"
+        let td3body= document.createElement("th")
+        td3body.innerText= "56"
+        let td4body= document.createElement("th")
+        td4body.innerText= "20€"
 
 
-    }
+        tbody.appendChild(trbody)
+        trbody.appendChild(td1body)
+        trbody.appendChild(td2body)
+        trbody.appendChild(td3body)
+        trbody.appendChild(td4body)
+      }
+
+    
 
     /* ESERCIZIO 14
       Crea una funzione che nasconda le immagini della tabella quando eseguita
@@ -236,6 +280,38 @@
 
     const changeColorWithRandom = function () {
 
+      newH2= document.querySelector("#changeMyColor")
+
+      for (let i = 0; i < 10; i++) {
+        const element= (Math.floor(Math.random() * 10))
+          switch (true) {
+            case element===1:
+              newH2.style.color ="red"
+              break;
+            case element===2:
+              newH2.style.color ="green"
+              break;
+            case element===3:
+              newH2.style.color ="blue"
+              break;
+            case element===4:
+              newH2.style.color ="purple"
+              break;
+            case element===5:
+              newH2.style.color ="black"
+              break;
+            case element===6:
+              newH2.style.color ="yellow"
+              break;
+            case element===7:
+              newH2.style.color ="violet"
+              break;
+            case element===8:
+              newH2.style.color ="grey"
+              break;
+            default:
+          }
+      }
 
     }
 
